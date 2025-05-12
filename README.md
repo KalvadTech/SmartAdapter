@@ -21,14 +21,18 @@ You can add any number of custom headers to be forwarded to the target by repeat
 
 You can use the Docker image directly from the GitHub repository, or build it yourself.
 
-### Build and run locally:
+### Dynamic Port Exposure
+
+The Dockerfile exposes the port dynamically based on the `PORT` environment variable (default: 8080). To run the container on a custom port, set the `PORT` environment variable and map the same port:
 
 ```
-docker build -t kalvadtech/smartadapter .
-docker run -p 8080:8080 kalvadtech/smartadapter -target https://sandboxapi.customerpulse.gov.ae/ -port 8080 -H "X-Integration-Apikey: your-api-key" -H "X-Another-Header: another-value"
+docker run -e PORT=9090 -p 9090:9090 ghcr.io/kalvadtech/smartadapter:latest -target https://sandboxapi.customerpulse.gov.ae/ -port 9090 -H "X-Integration-Apikey: your-api-key"
 ```
 
-### Or pull from GitHub Container Registry (if published):
+If you do not set `PORT`, it defaults to 8080:
+
+
+## Pull from GitHub Container Registry :
 
 ```
 docker pull ghcr.io/kalvadtech/smartadapter:latest

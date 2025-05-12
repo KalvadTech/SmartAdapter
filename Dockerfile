@@ -8,5 +8,8 @@ RUN go build -o smartadapter main.go
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/smartadapter .
-EXPOSE 8080
+# Dynamically expose the port specified by the PORT environment variable (default 8080)
+ARG PORT=8080
+ENV PORT=${PORT}
+EXPOSE ${PORT}
 ENTRYPOINT ["./smartadapter"]
