@@ -1,0 +1,30 @@
+# Binaries
+smartadapter
+smartadapter-*
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Build and output folders
+/build/
+/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Go modules
+vendor/
+
+# Logs
+*.log
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Docker
+*.tar
