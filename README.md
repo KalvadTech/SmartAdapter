@@ -8,13 +8,13 @@ Download the latest release for your platform from the [GitHub Releases page](ht
 
 ```
 chmod +x smartadapter
-./smartadapter -target https://sandboxapi.customerpulse.gov.ae/ -port 8080 -H "X-Integration-Apikey: your-api-key" -H "X-Another-Header: another-value"
+./smartadapter -target https://sandboxapi.customerpulse.gov.ae/ -port 8080 -H "X-Integration-Apikey: your-api-key" -H "Auth-GSB-example: another-value"
 ```
 
 You can add any number of custom headers to be forwarded to the target by repeating the `-H` flag:
 
 ```
-./smartadapter -target https://example.com/ -H "Authorization: Bearer token" -H "X-Custom-Header: value"
+./smartadapter -target https://example.com/ -H "Authorization: Bearer token" -H "Auth-GSB-example: value"
 ```
 
 ## Run with Docker
